@@ -107,9 +107,7 @@ npx expo start --web
 
  Backend Dependency
 
-This frontend requires the SentinelAI Backend to be running:
-
-http://localhost:8082
+This frontend requires the SentinelAI Backend to be running: http://localhost:8082
 
 Backend repository:
 https://github.com/SoftwareReboot/SentinelAI-Backend
