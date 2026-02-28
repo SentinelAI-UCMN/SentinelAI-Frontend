@@ -1,33 +1,74 @@
  SentinelAI Frontend
 
-SentinelAI Frontend is a React Native (Expo) web client that consumes the SentinelAI Backend REST API. It provides a dashboard interface for viewing AI-classified incidents, performing live camera analysis, and reviewing full incident reports.
+![React Native](https://img.shields.io/badge/React%20Native-Expo-blue)
+![Platform](https://img.shields.io/badge/Platform-Web-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-This repository focuses on UI/UX design and API integration.
+SentinelAI Frontend is a React Native (Expo Web) client application that consumes the SentinelAI Backend REST API. It provides a real-time dashboard for monitoring AI-classified incidents and performing live camera analysis.
+
+This repository focuses on frontend architecture, navigation flow, and API integration.
 
 ---
 
- Features
+  Features
 
 - Live webcam frame analysis
-- Periodic automatic AI scanning
+- Automatic periodic scanning
 - Incident dashboard with statistics
 - Risk level visualization
-- Full incident detail screen
-- Video upload support via backend
+- Detailed AI-generated incident reports
+- Backend-integrated video upload
 
 ---
 
- Tech Stack
+ Frontend Architecture
 
-- React Native (Expo)
+```
+App
+ ├── Navigation (Bottom Tabs + Stack)
+ ├── Screens
+ │     ├── DashboardScreen
+ │     ├── LiveAnalysisScreen
+ │     └── IncidentDetailScreen
+ │
+ └── API Layer (HTTP Requests to Backend)
+```
+
+ Design Principles
+
+- Clear screen separation
+- Stateless data fetching from backend
+- Reusable UI components
+- Backend-driven state
+
+---
+
+ 🛠 Tech Stack
+
+- React Native
+- Expo
 - Expo Web
-- React Navigation (Bottom Tabs + Native Stack)
+- React Navigation
 
 ---
 
- Prerequisites
+  Project Structure
 
-Make sure you have:
+```
+SentinelAI-Frontend/
+├── src/
+│   ├── screens/
+│   ├── components/
+│   ├── navigation/
+│   └── services/
+│
+├── package.json
+└── README.md
+```
+
+---
+
+  Prerequisites
 
 - Node.js
 - npm
@@ -35,9 +76,9 @@ Make sure you have:
 
 ---
 
- Setup Guide
+  Setup Guide
 
- 1. Clone the Repository
+ 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/SentinelAI-Frontend.git
@@ -46,7 +87,7 @@ cd SentinelAI-Frontend
 
 ---
 
- 2. Install Dependencies
+ 2️⃣ Install Dependencies
 
 ```bash
 npm install
@@ -55,31 +96,27 @@ npm install @react-navigation/native-stack
 
 ---
 
- 3. Configure API Base URL
+ 3️⃣ Configure Backend URL
 
-Open:
+Update API base URL in:
 
-- `DashboardScreen.js`
-- `LiveAnalysisScreen.js`
-- `IncidentDetailScreen.js`
+- DashboardScreen.js
+- LiveAnalysisScreen.js
+- IncidentDetailScreen.js
 
-Update:
-
-```javascript
+```
 const API_BASE = 'http://YOUR_LOCAL_IP:8082';
 ```
 
-To find your local IP:
+Find local IP:
 
 ```bash
 ipconfig
 ```
 
-Look for IPv4 address.
-
 ---
 
- 4. Start the Application
+ 4️⃣ Run Application
 
 ```bash
 npx expo start --web
@@ -87,33 +124,17 @@ npx expo start --web
 
 ---
 
- Application Usage
+ 🔗 Backend Dependency
 
- Live Analysis
-1. Go to Live Analysis
-2. Allow camera access
-3. Click Capture to analyze a frame
-4. Click Live for automatic analysis
+Backend must be running:
 
- Dashboard
-- Displays all incidents
-- Shows classification, risk level, and timestamp
+http://localhost:8082
 
- Incident Detail
-- Click an incident
-- View complete AI-generated report
+Backend Repository:
+https://github.com/YOUR_USERNAME/SentinelAI-Backend
 
 ---
 
- Backend Dependency
-
-This frontend requires the SentinelAI Backend to be running: http://localhost:8082
-
-Backend repository:
-https://github.com/SoftwareReboot/SentinelAI-Backend
-
----
-
- License
+ 📄 License
 
 MIT License
