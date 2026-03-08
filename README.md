@@ -131,7 +131,7 @@ Backend must be running:
 http://localhost:8082
 
 Backend Repository:
-https://github.com/YOUR_USERNAME/SentinelAI-Backend
+https://github.com/SoftwareReboot/SentinelAI-Backend.git
 
 ---
 
