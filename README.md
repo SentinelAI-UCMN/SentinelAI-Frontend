@@ -1,16 +1,18 @@
  SentinelAI Frontend
 
-![React Native](https://img.shields.io/badge/React%20Native-Expo-blue)
+![React](https://img.shields.io/badge/React-18-blue)
+![Vite](https://img.shields.io/badge/Vite-5-purple)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-teal)
 ![Platform](https://img.shields.io/badge/Platform-Web-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-SentinelAI Frontend is a React Native (Expo Web) client application that consumes the SentinelAI Backend REST API. It provides a real-time dashboard for monitoring AI-classified incidents and performing live camera analysis.
+SentinelAI Frontend is a React web application that consumes the SentinelAI Backend REST API. It provides a real-time dashboard for monitoring AI-classified incidents and performing live camera analysis.
 
 This repository focuses on frontend architecture, navigation flow, and API integration.
 
 ---
 
-  Features
+ Features
 
 - Live webcam frame analysis
 - Automatic periodic scanning
@@ -25,18 +27,21 @@ This repository focuses on frontend architecture, navigation flow, and API integ
 
 ```
 App
- ├── Navigation (Bottom Tabs + Stack)
- ├── Screens
- │     ├── DashboardScreen
- │     ├── LiveAnalysisScreen
- │     └── IncidentDetailScreen
+ ├── React Router v6 (Client-side Routing)
+ ├── Pages
+ │     ├── Dashboard
+ │     ├── LiveMonitor
+ │     ├── VideoUpload
+ │     ├── IncidentReports
+ │     ├── IncidentDetail
+ │     └── Settings
  │
  └── API Layer (HTTP Requests to Backend)
 ```
 
  Design Principles
 
-- Clear screen separation
+- Clear page separation
 - Stateless data fetching from backend
 - Reusable UI components
 - Backend-driven state
@@ -45,44 +50,50 @@ App
 
  🛠 Tech Stack
 
-- React Native
-- Expo
-- Expo Web
-- React Navigation
+- React 18
+- React Router v6
+- Vite 5
+- TailwindCSS 3
+- Recharts
+- Lucide Icons
 
 ---
 
-  Project Structure
+ Project Structure
 
 ```
-SentinelAI-Frontend/
-├── src/
-│   ├── screens/
+SentinelAI/
+├── frontend/
 │   ├── components/
-│   ├── navigation/
+│   ├── pages/
+│   ├── layouts/
+│   ├── utils/
 │   └── services/
 │
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
 ├── package.json
 └── README.md
 ```
 
 ---
 
-  Prerequisites
+ Prerequisites
 
-- Node.js
+- Node.js 18+
 - npm
-- Expo CLI
 
 ---
 
-  Setup Guide
+ Setup Guide
 
  1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SentinelAI-Frontend.git
-cd SentinelAI-Frontend
+git clone https://github.com/jNyxxx/SentinelAI.git
+cd SentinelAI
 ```
 
 ---
@@ -91,20 +102,15 @@ cd SentinelAI-Frontend
 
 ```bash
 npm install
-npm install @react-navigation/native-stack
 ```
 
 ---
 
  3️⃣ Configure Backend URL
 
-Update API base URL in:
+Update API base URL in the services layer:
 
-- DashboardScreen.js
-- LiveAnalysisScreen.js
-- IncidentDetailScreen.js
-
-```
+```js
 const API_BASE = 'http://YOUR_LOCAL_IP:8082';
 ```
 
@@ -119,19 +125,20 @@ ipconfig
  4️⃣ Run Application
 
 ```bash
-npx expo start --web
+npm run dev
 ```
+
+Frontend runs on http://localhost:5173
 
 ---
 
  🔗 Backend Dependency
 
 Backend must be running:
-
 http://localhost:8082
 
 Backend Repository:
-https://github.com/SoftwareReboot/SentinelAI-Backend.git
+https://github.com/SentinelAI-UCMN/SentinelAI-Backend.git
 
 ---
 
